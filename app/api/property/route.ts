@@ -12,8 +12,8 @@ export async function GET(request: Request) {
     const limit = 20;
     const offset = (page - 1) * limit;
 
-    let conditions = [];
-    let params = [];
+    const conditions = [];
+    const params = [];
     let paramCount = 1;
 
     if (city) {
@@ -49,7 +49,7 @@ export async function GET(request: Request) {
       [...params, limit, offset]
     );
 
-    const countResult = await query(
+    const countResult = await query<{ total: string }>(
       `SELECT COUNT(*) as total FROM public.v_offmarket_lots ${whereClause}`,
       params
     );

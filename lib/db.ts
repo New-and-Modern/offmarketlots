@@ -7,7 +7,7 @@ const pool = new Pool({
     : false
 });
 
-export async function query<T = any>(text: string, params?: any[]): Promise<{ rows: T[], rowCount: number }> {
+export async function query<T = unknown>(text: string, params?: unknown[]): Promise<{ rows: T[], rowCount: number }> {
   try {
     const res = await pool.query(text, params);
     return { rows: res.rows, rowCount: res.rowCount || 0 };

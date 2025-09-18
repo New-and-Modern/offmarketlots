@@ -236,7 +236,7 @@ export default async function PropertyDetail({ params }: { params: Promise<{ id:
                   </TableHeader>
                   <TableBody>
                     {builderComps.length > 0 ? (
-                      builderComps.slice(0, 10).map((comp: any) => (
+                      builderComps.slice(0, 10).map((comp: { transaction_id: string; full_address: string; instrument_date: string; transfer_amount: number; price_per_sqft: number }) => (
                         <TableRow key={comp.transaction_id} className="hover:bg-gray-50">
                           <TableCell className="font-medium text-gray-900">
                             {comp.full_address}
@@ -286,7 +286,7 @@ export default async function PropertyDetail({ params }: { params: Promise<{ id:
                   </TableHeader>
                   <TableBody>
                     {mlsComps.length > 0 ? (
-                      mlsComps.slice(0, 10).map((comp: any, index: number) => (
+                      mlsComps.slice(0, 10).map((comp: { mls_id?: string; full_address: string; list_date: string; sale_price?: number; current_price?: number; list_price?: number; price_per_sqft: number }, index: number) => (
                         <TableRow key={comp.mls_id || index} className="hover:bg-gray-50">
                           <TableCell className="font-medium text-gray-900">
                             {comp.full_address}

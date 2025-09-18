@@ -3,7 +3,24 @@ import { query } from '@/lib/db';
 
 export async function GET() {
   try {
-    const stats = await query(
+    const stats = await query<{
+      avg_predicted_lot_price?: string;
+      avg_predicted_sale_price?: string;
+      builder_purchase_count?: string;
+      builder_purchase_avg_price?: string;
+      builder_purchase_avg_price_per_sqft?: string;
+      builder_purchase_avg_lot_size?: string;
+      new_construction_count?: string;
+      new_construction_avg_price?: string;
+      new_construction_avg_price_per_sqft?: string;
+      new_construction_avg_lot_size?: string;
+      total_listings?: string;
+      total_cities?: string;
+      min_price?: string;
+      max_price?: string;
+      min_lot_size?: string;
+      max_lot_size?: string;
+    }>(
       `SELECT * FROM public.v_offmarket_lots_stats`
     );
 

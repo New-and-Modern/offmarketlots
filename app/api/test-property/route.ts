@@ -4,7 +4,7 @@ import { query } from '@/lib/db';
 export async function GET() {
   try {
     // First check if any properties exist in the view
-    const countCheck = await query(
+    const countCheck = await query<{ total: string }>(
       `SELECT COUNT(*) as total FROM public.v_offmarket_lots`
     );
 

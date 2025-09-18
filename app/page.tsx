@@ -1,7 +1,6 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Building2, DollarSign, TrendingUp, Calculator, MapPin, BarChart3, CheckCircle2, Target, Users, TrendingDown } from "lucide-react";
+import { Building2, DollarSign, TrendingUp, Calculator, MapPin, BarChart3, CheckCircle2, Target, Users } from "lucide-react";
 
 async function getStatistics() {
   try {
